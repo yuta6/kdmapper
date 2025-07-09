@@ -1,0 +1,16 @@
+{
+    "terminal.integrated.profiles.windows": {
+        "VS Dev Cmd x64": {
+            "path": "C:\\Windows\\System32\\cmd.exe",
+            "args": [
+                "/k",
+                "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Auxiliary\\Build\\vcvars64.bat"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "VS Dev Cmd x64",
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "ntstatus.h": "c"
+    }
+}
