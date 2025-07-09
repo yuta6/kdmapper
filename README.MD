@@ -18,10 +18,10 @@ Tested from **Windows 10 1607** to **Windows 11 24H2 26100.3915** :heavy_check_m
 	[PDB offset based build only]:
 	--offsetsPath "FilePath" to include your own offsets file path (by default .\offsets.ini)(if FilePath contains spaces, it must be enclosed in quotation marks)
 	--dontUpdateOffsets to execute without updating the offsets file (warning: you have to be sure that the offsets are not outdated to your current windows build, or you risk a potential BSOD)
-	
+
 
 ## Features:
-	
+
 	Works with /GS- compiled drivers
 	Hooks NtAddAtom which exists everywhere and is rarely called
 	Clears MmUnloadedDrivers
@@ -86,7 +86,6 @@ Updated and improved by https://github.com/TheCruZ
 Initial PDB offsets parser written by https://github.com/Mohi-eddine
 
 Independent Pages allocation written by https://github.com/Herooyyy/
-
 
 
 Have Fun!!

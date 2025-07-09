@@ -1,6 +1,33 @@
-正確な和訳を下記に記載します。
+offsets.iniの内容
+[ntoskrnl.exe]
+MmAllocateIndependentPagesEx=11094668
+MmFreeIndependentPages=3505200
+PiDDBLock=16296992
+PiDDBCacheTable=16618656
+MmSetPageProtection=5223792
 
----
+[ci.dll]
+g_KernelHashBucketList=901264
+g_HashCacheLock=266272
+
+[WdFilter.sys]
+MpBmDocOpenRules=146200
+MpFreeDriverInfoEx=433976
+
+## レジストリーで脆弱ドライバーを許可するコマンド
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\CI\Config" /v VulnerableDriverBlocklistEnable /t REG_DWORD /d 0 /f
+
+##　ビルドコマンド
+MSBuild kdmapper.sln /p:Configuration=Release /p:Platform=x64
+MSBuild kdmapper.sln /p:Configuration=Release_Pdb_Offset /p:Platform=x64
+MSBuild kdmapper.sln /p:Configuration=lib-Release /p:Platform=x64
+MSBuild kdmapper.sln /p:Configuration=lib-Release_Pdb_Offsets /p:Platform=x64
+
+## 実行コマンド
+kdmapper_Release_Pdb_Offset.exe ApDriver.sys --dontUpdateOffsets --offsetsPath "offsets.ini"
+kdmapper_Release.exe ApDriver.sys --offsetsPath "\offsets.ini"
+
+
 
 # KDMapper
 
